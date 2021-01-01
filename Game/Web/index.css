@@ -1,0 +1,41 @@
+table{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px black;
+    border-collapse:collapse
+    }
+
+
+@media only screen and (max-width: 768px) {
+    table{
+        width: 95%;
+    }
+}
+
+td {
+    border: 1px solid black;
+  }
+
+.death{
+    background-color:darkcyan;
+    content: "D";
+}
+
+.live{
+    background-color: yellowgreen;
+}
+
+
+p{
+    text-align: justify;
+}
+
+#btn-container{
+    padding: 1vw;
+    text-align: center;
+}
+
+body{
+    padding: 1vw;
+}

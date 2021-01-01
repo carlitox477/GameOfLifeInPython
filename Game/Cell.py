@@ -1,10 +1,10 @@
 class Cell:
     def __init__(self, yPosition, xPosition): #Constructor#
         """Conway's Game of Life's cell constructor"""
-        self.xPosition=xPosition
-        self.yPosition=yPosition
-        self.currentlyLiving=False
-        self.nextLivingState=False
+        self.__xPosition=xPosition
+        self.__yPosition=yPosition
+        self.__currentlyLiving=False
+        self.__nextLivingState=False
         pass
 
 
@@ -12,10 +12,10 @@ class Cell:
         """Change nextLivingState acording to Conway's Game of Life's rules"""
         livingNeighbours=0
         
-        upPosition=self.yPosition-1
-        downPosition=(self.yPosition+1) % len(cellsMap)
-        rightPosition=(self.xPosition+1) % len(cellsMap[0])
-        leftPosition=self.xPosition-1
+        upPosition=self.__yPosition-1
+        downPosition=(self.__yPosition+1) % len(cellsMap)
+        rightPosition=(self.__xPosition+1) % len(cellsMap[0])
+        leftPosition=self.__xPosition-1
 
         #Take in count margin cells
         if(leftPosition<0):
@@ -28,21 +28,21 @@ class Cell:
         
         livingNeighbours = (
             cellsMap[upPosition][leftPosition].getAdditionLivingEvaluation() + 
-            cellsMap[upPosition][self.xPosition].getAdditionLivingEvaluation() +
+            cellsMap[upPosition][self.__xPosition].getAdditionLivingEvaluation() +
             cellsMap[upPosition][rightPosition].getAdditionLivingEvaluation() +
-            cellsMap[self.yPosition][leftPosition].getAdditionLivingEvaluation() + 
-            cellsMap[self.yPosition][rightPosition].getAdditionLivingEvaluation() +
+            cellsMap[self.__yPosition][leftPosition].getAdditionLivingEvaluation() + 
+            cellsMap[self.__yPosition][rightPosition].getAdditionLivingEvaluation() +
             cellsMap[downPosition][leftPosition].getAdditionLivingEvaluation() + 
-            cellsMap[downPosition][self.xPosition].getAdditionLivingEvaluation() +
+            cellsMap[downPosition][self.__xPosition].getAdditionLivingEvaluation() +
             cellsMap[downPosition][rightPosition].getAdditionLivingEvaluation()
             )
 
         #Define next state acording to Conway's Game of Life's rules
-        if((not(self.currentlyLiving) and livingNeighbours==3) or
-        (self.currentlyLiving and (livingNeighbours==2 or livingNeighbours==3)) ):
-            self.nextLivingState=True
+        if((not(self.__currentlyLiving) and livingNeighbours==3) or
+        (self.__currentlyLiving and (livingNeighbours==2 or livingNeighbours==3)) ):
+            self.__nextLivingState=True
         else:
-            self.nextLivingState=False
+            self.__nextLivingState=False
             pass
         pass
 
@@ -50,26 +50,26 @@ class Cell:
         """If the cell is alive, this method gets 1.
         Otherwise, it gets 0"""
         addValue=0
-        if(self.currentlyLiving):
+        if(self.__currentlyLiving):
             addValue=1
             pass
         return addValue
 
     def changeLivingState(self):
         """Change living states depending on what was decided in the evaluation state"""
-        self.currentlyLiving=self.nextLivingState
+        self.__currentlyLiving=self.__nextLivingState
         pass
 
     
     def getState(self):
-        return self.currentlyLiving
+        return self.__currentlyLiving
     
     def setCurrentlyLiving(self, newState):
-        self.currentlyLiving=newState
+        self.__currentlyLiving=newState
         pass
 
     def invertCurrentState(self):
-        self.currentlyLiving=not(self.currentlyLiving)
+        self.__currentlyLiving=not(self.__currentlyLiving)
         pass
 
     pass

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Conway's Game of Life</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.10/brython.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.10/brython_stdlib.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="index.js" defer></script>
+        <!-- -->
+        <!--<script src="http://localhost:8000/Game/Web/index.py" type="text/python" defer></script>-->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body onload="brython(1)">
+        <h1 id=test>Conway's Game of Life</h1>
+        <p>The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.
+            It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.
+            One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+            It is Turing complete and can simulate a universal constructor or any other Turing machine.
+        </p>
+        
+        <!--
+            <div id="gameboard">
+
+        </div>
+        -->
+        <table id="board">
+        </table>
+        <div id="btn-container">
+            <button id="btn">START</button>
+        </div>
+        <h2>Rules</h2>
+        <p>
+            <ul>
+                <li>Any live cell with two or three live neighbours survives.</li>
+                <li>Any dead cell with three live neighbours becomes a live cell.</li>
+                <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
+            </ul>
+        </p>
+
+        <h2>Patterns</h2>
+        <h3>Still life</h3>
+        <h3>Oscillators</h3>
+        <h3>Spaceships</h3>
+    </body>
+
+</html>

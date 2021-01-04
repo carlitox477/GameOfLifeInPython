@@ -19,30 +19,104 @@
             One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
             It is Turing complete and can simulate a universal constructor or any other Turing machine.
         </p>
-        
-        <!--
-            <div id="gameboard">
 
+        <div class="container-fluid">
+            <div id ="board-row" class="row">
+                <div class="col-md">
+                    <table id="board">
+                    </table>
+                    <div id="btn-container">
+                        <button class="btn" id="start-btn">START</button>
+                        <button class="btn" id="clean-btn">CLEAN</button>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <h2>Rules</h2>
+                    <p>
+                        <ul>
+                            <li>Any live cell with two or three live neighbours survives.</li>
+                            <li>Any dead cell with three live neighbours becomes a live cell.</li>
+                            <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
         </div>
-        -->
-        <table id="board">
-        </table>
-        <div id="btn-container">
-            <button id="btn">START</button>
-        </div>
-        <h2>Rules</h2>
-        <p>
-            <ul>
-                <li>Any live cell with two or three live neighbours survives.</li>
-                <li>Any dead cell with three live neighbours becomes a live cell.</li>
-                <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
-            </ul>
-        </p>
 
-        <h2>Patterns</h2>
-        <h3>Still life</h3>
-        <h3>Oscillators</h3>
-        <h3>Spaceships</h3>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h2>Patterns</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <h3>Still life</h3>
+                    <div id="sl-block" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/66px-Game_of_life_block_with_border.svg.png" alt="Block-IMG"><br>
+                        Block
+                    </div>
+                    <div id="sl-bee-hive" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Game_of_life_beehive.svg/98px-Game_of_life_beehive.svg.png" alt="Bee-hive-IMG"><br>
+                        Bee-hive
+                    </div>
+                    <div id="sl-loaf" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game_of_life_loaf.svg/98px-Game_of_life_loaf.svg.png" alt="Loaf-IMG"><br>
+                        Loaf
+                    </div>
+                    <div id="sl-boat" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Game_of_life_boat.svg/82px-Game_of_life_boat.svg.png" alt="Boat-IMG"><br>
+                        Boat
+                    </div>
+                    <div id="sl-tub" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Game_of_life_flower.svg/82px-Game_of_life_flower.svg.png" alt="Tub-img"><br>
+                        Tub
+                    </div>
+                </div>
+                <div class="col-md">
+                    <h3>Oscillators</h3>
+                    <div id="o-blinker" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif" alt="Blinker-IMG"><br>
+                        Blinker
+                    </div>
+                    <div id="o-toad" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Game_of_life_toad.gif" alt="Toad-IMG"><br>
+                        Toad
+                    </div>
+                    <div id="o-beacon" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Game_of_life_beacon.gif" alt="Beacon-IMG"> <br>
+                        Beacon
+                    </div>
+                    <div id="o-pulsar" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif" alt="Pulsar-IMG"><br>
+                        Pulsar
+                    </div>
+                    <div id="o-penta-decathlon" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/I-Column.gif" alt="Penta-decathlon-IMG"><br>
+                        Penta-decathlon
+                    </div>
+                </div>
+                <div class="col-md">
+                    <h3>Spaceships</h3>
+                    <div id="ss-glidder" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Game_of_life_animated_glider.gif" alt="Glider-IMG"><br>
+                        Glider
+                    </div>
+                    <div id="ss-light-wigth" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif" alt="Light-weight Spaceship-IMG"><br>
+                        Light-weight Spaceship
+                    </div>
+                    <div id="ss-middle-weight" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Animated_Mwss.gif" alt="Middle-weight Spaceship IMG"><br>
+                        Middle-weight Spaceship
+                    </div>
+                    <div id="ss-heavy-weight" class="pattern">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Animated_Hwss.gif" alt="Heavy-weight Spaceship IMG"><br>
+                        Heavy-weight Spaceship
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>

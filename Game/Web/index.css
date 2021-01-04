@@ -1,16 +1,25 @@
 table{
-    width: 70%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
     border: 1px black;
     border-collapse:collapse
     }
 
+h2{
+    text-align: center;
+}
 
-@media only screen and (max-width: 768px) {
+h3{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 887px) {
     table{
         width: 95%;
     }
+
 }
 
 td {
@@ -38,4 +47,20 @@ p{
 
 body{
     padding: 1vw;
+}
+
+.pattern{
+    text-align: center;
+    background-color: burlywood;
+    margin: 2%;
+    padding: 2%;
+    border-radius: 1em;
+}
+
+#start-btn{
+    background-color: greenyellow;
+}
+
+#clean-btn{
+    background-color: gold;
 }

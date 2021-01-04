@@ -11,22 +11,6 @@ console.log("  2° Case: The web app don't need server information, like this ga
 console.log("In any other case, I think programming using JS any kind of client side functionality is the best")
 console.log("Note: If you've downloaded this web from git, you MUST run a server on the main folder using port 8000")
 
-#Method to create the board
-def createBoard(height, width):
-    
-    #Get the reference to the board
-    table=document["board"]
-
-    #Create each row
-    for i in range(0,height):
-        row=html.TR()
-        for j in range(0,width):
-            row <= html.TD(str(j), Class= "cell death")
-            pass
-        table <= row
-        pass
-    pass
-
 def stop():
     playing=False
     pass

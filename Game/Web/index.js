@@ -11,21 +11,16 @@ function createBoard(heigh, width){
     for (var i=0; i<heigh;i++){
         
         row=document.createElement("tr");
-        //row=document.createElement("div");
-        //row.classList.add("row")
         
         for (var j=0;j<width;j++){
             cell=document.createElement("td")
-            //cell=document.createElement("div")
            
             cell.id= "cell-"+i+"-"+j;
             cell.classList.add("cell","death")
-            //cell.addEventListener("click",changeCellClass(cell.id,"death"))
-            cell.onclick=function(){changeCellClass(this,"death")};
-            //cell.onmousedown=function(){changeCellClass(this,"death")};
-            cell.onmouseover=function(){this.style.backgroundColor="yellowgreen"};
-            cell.onmouseleave=function(){this.style.backgroundColor="darkcyan"};
-            //cell.addEventListener("click",console.log(cell.id))
+
+            cell.onclick=function(){changeCellClass(this)};
+            cell.onmouseover=function(){mouseOverEvent(this)};
+            cell.onmouseleave=function(){mouseLeaveEvent(this)};
             row.appendChild(cell);
         }
         table.appendChild(row)
@@ -37,27 +32,32 @@ function windowReszie(){
     $("td").height(size);
   }
 
-function changeCellClass(cell,currentClass){
-    console.log(cell.id)
-    console.log(currentClass)
-    cell.classList.remove(currentClass)
-    if(currentClass=="death"){
-        cell.classList.add("live")
-        currentClass="live"
-        cell.style.backgroundColor="yellowgreen";
-        cell.onmouseover=function(){this.style.backgroundColor="darkcyan"};
-        cell.onmouseleave=function(){this.style.backgroundColor="yellowgreen"};
-        console.log(cell.id+" 've changed to live")
+function mouseOverEvent(cell){
+    if(cell.classList.contains("live")){
+        cell.style.backgroundColor="darkcyan"
     }else{
-        cell.classList.add("death")
-        currentClass="death"
-        cell.style.backgroundColor="darkcyan";
-        cell.onmouseover=function(){this.style.backgroundColor="yellowgreen"};
-        cell.onmouseleave=function(){this.style.backgroundColor="darkcyan"};
-        console.log(cell.id+" 've changed to death")
-        
+        cell.style.backgroundColor="yellowgreen";
     }
-    cell.onclick=function(){changeCellClass(this,currentClass)};
+}
+
+function mouseLeaveEvent(cell){
+    if(cell.classList.contains("live")){
+        cell.style.backgroundColor="yellowgreen"
+    }else{
+        cell.style.backgroundColor="darkcyan"};
+    }
+}
+
+function changeCellClass(cell){
+    if(cell.classList.contains("death")){
+        cell.classList.remove("death")
+        cell.classList.add("live")
+        //cell.style.backgroundColor="yellowgreen";
+    }else{
+        cell.classList.remove("live")
+        cell.classList.add("death")
+        //cell.style.backgroundColor="darkcyan";      
+    }
 }
 
 function clearBoard(heigh,width){

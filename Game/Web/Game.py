@@ -1,4 +1,4 @@
-from .Cell import Cell
+from Cell import Cell
 import time
 
 class Game:
@@ -14,6 +14,10 @@ class Game:
                 pass
             self.cellsMap.append(l)
             pass
+        pass
+
+    def setCellsMap(self, board):
+        self.cellsMap=board
         pass
 
     def setStartLivingCells(self,livingCellsPositions):
@@ -55,6 +59,11 @@ class Game:
 
     def stopGame(self):
         self.playing=False
+        pass
+
+    def iterate(self):
+        self.executeEvaluationStage()
+        self.executeChangeStage()
         pass
 
     def playGame(self):

@@ -1,3 +1,5 @@
+from browser import document, console, alert,html
+
 class Cell:
     def __init__(self, yPosition, xPosition): #Constructor#
         """Conway's Game of Life's cell constructor"""
@@ -71,5 +73,8 @@ class Cell:
     def invertCurrentState(self):
         self.__currentlyLiving=not(self.__currentlyLiving)
         pass
+
+    def getCellId(self):
+        return "cell-"+str(self.__yPosition)+"-"+str(self.__xPosition)
 
     pass

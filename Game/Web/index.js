@@ -42,9 +42,9 @@ function mouseOverEvent(cell){
 
 function mouseLeaveEvent(cell){
     if(cell.classList.contains("live")){
-        cell.style.backgroundColor="yellowgreen"
+        cell.style.backgroundColor="yellowgreen";
     }else{
-        cell.style.backgroundColor="darkcyan"};
+        cell.style.backgroundColor="darkcyan";
     }
 }
 
